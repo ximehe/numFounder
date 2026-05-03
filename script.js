@@ -13,6 +13,7 @@ boton.addEventListener("click", () => {
     //Validación de input
     if (!valor || valor < 1 || valor>100){
         mensaje.textContent= "Ingresá un número válido entre 1 y 100";
+        input.classList.add("error"); 
         return;
     }
 
@@ -45,3 +46,6 @@ boton.addEventListener("click", () => {
     intentosTexto.textContent = `Intentos: ${intentos}`;
 });
 
+input.addEventListener("input", () => {
+    input.classList.remove("error");
+});
