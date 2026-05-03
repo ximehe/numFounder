@@ -22,3 +22,12 @@ boton.addEventListener("click", () => {
     intentosTexto.textContent = `Intentos: $(intentos)`;
 });
 
+let diferencia = Math.abs(numeroSecreto - valor);
+
+if (diferencia > 30){
+    mensaje.textContent += "❄️ Muy lejos";
+} else if (diferencia > 10) {
+    mensaje.textContent += " 🟡 Cerca";
+} else {
+    mensaje.textContent += "🔥 Muy cerca";
+}
