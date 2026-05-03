@@ -26,8 +26,12 @@ boton.addEventListener("click", () => {
     item.textContent = valor;
     historial.appendChild(item);
 
+    //Mensaje ganador
     if (valor === numeroSecreto) {
-        mensaje.textContent = "¡Ganaste!";
+        mensaje.textContent = "¡Ganaste! Reiniciá para jugar de nuevo";
+
+        boton.disabled = true;
+        input.disabled = true;
     } else {
     // Sistema mayor o menor
     if (valor < numeroSecreto){
@@ -69,5 +73,7 @@ btnReiniciar.addEventListener("click", () => {
 
     input.classList.remove("error");
 
+    boton.disabled = false;
+    input.disabled = false;
 
 });

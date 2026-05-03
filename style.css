@@ -4,6 +4,8 @@
 }
 
 #historial {
+    max-height: 120px;
+    overflow-y: auto;
     margin-top: 10px;
     padding: 0%;
 }
@@ -14,6 +16,12 @@
   margin: 4px 0;
   padding: 6px;
   border-radius: 5px;
+  font-size: 14px;
+}
+
+#historial li:last-child{
+    background: #d0ebff;
+    font-weight: bold;
 }
 
 body{
@@ -58,6 +66,10 @@ button:hover{
     background-color: #3399ff;
 }
 
+button:disabled{
+    background-color: #ccc;
+    cursor: not-allowed;
+}
 #mensaje {
     margin-top: 10px;
     font-weight: bold;
