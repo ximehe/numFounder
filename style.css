@@ -10,8 +10,55 @@
 
 #historial li{
   list-style: none;
-  background: #eee;
+  background: #f2f2f2;
   margin: 4px 0;
-  padding: 5px;
+  padding: 6px;
   border-radius: 5px;
+}
+
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #a8d8ff, #d6f0ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #4da6ff;
+    color: white;
+    transition: 0.2s;
+}
+
+button:hover{
+    background-color: #3399ff;
+}
+
+#mensaje {
+    margin-top: 10px;
+    font-weight: bold;
 }
