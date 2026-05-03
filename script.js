@@ -5,6 +5,7 @@ const input= document.getElementById("inputNumero");
 const boton= document.getElementById("btnIntentar");
 const mensaje = document.getElementById("mensaje");
 const intentosTexto = document.getElementById("intentos");
+const historial= document.getElementById("historial");
 
 boton.addEventListener("click", () => {
 
@@ -18,6 +19,11 @@ boton.addEventListener("click", () => {
     }
 
     intentos++;
+
+    //Historial
+    const item = document.createElement("li");
+    item.textContent = valor;
+    historial.appendChild(item);
 
     if (valor === numeroSecreto) {
         mensaje.textContent = "¡Ganaste!";
