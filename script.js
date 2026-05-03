@@ -6,6 +6,7 @@ const boton= document.getElementById("btnIntentar");
 const mensaje = document.getElementById("mensaje");
 const intentosTexto = document.getElementById("intentos");
 const historial= document.getElementById("historial");
+const btnReiniciar= document.getElementById("btnReiniciar");
 
 boton.addEventListener("click", () => {
 
@@ -54,4 +55,19 @@ boton.addEventListener("click", () => {
 
 input.addEventListener("input", () => {
     input.classList.remove("error");
+});
+
+btnReiniciar.addEventListener("click", () => {
+    numeroSecreto= Math.floor(Math.random() * 100) + 1;
+    intentos = 0;
+
+    mensaje.textContent= "Nuevo juego iniciado 🎮";
+    intentosTexto.textContent= "Intentos: 0";
+    input.value="";
+
+    historial.innerHTML= "";
+
+    input.classList.remove("error");
+
+
 });
