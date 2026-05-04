@@ -9,6 +9,81 @@ const historial= document.getElementById("historial");
 const btnReiniciar= document.getElementById("btnReiniciar");
 const barra = document.getElementById("barraProgreso");
 
+//Frases mayor/menor
+const frasesMayor = [
+  "🐞 bug: número demasiado bajo",
+  "⬆️ Dale, apuntá más alto!",
+  "😅 Te quedaste cort@...",
+  "📈 Incrementá ese valor!",
+  "⬆️ Uuh, ese valor no pasa el test",
+  "😄 Te recomiendo probar con algo más grande..."
+
+];
+
+const frasesMenor = [
+  "📉 Te pasaste, bajá un cambio",
+  "⬇️ Muy arriba, probá menos",
+  "😬 Te fuiste al pasto, baja un poco",
+  "⚠️ Valor demasiado alto"
+];
+
+const frasesLejos = [
+  "❄️ Estás en la Antártida",
+  "🥶 Ni cerca",
+  "🌨️ Frío extremo",
+  "🙈 Ni lo rozaste",
+  "🛰️ Señal perdida",
+  "🐞 Error crítico: lejos del valor"
+];
+
+const frasesMedio = [
+  "🟡 Vas calentando motores",
+  "😏 Mmm, interesante",
+  "👀 Te estás acercando",
+  "😏 vas mejorando",
+  "🤔 no está mal",
+  "📊 progreso detectado",
+  "🔄 recalculando… vas bien"
+];
+
+const frasesCerca = [
+  "🔥 ESTÁS AHÍ NOMÁS",
+  "😳 casi casi",
+  "🚨 zona crítica",
+  "😮 estás peligrosamente cerca",
+  "⚠️ precisión alta",
+  "🏁 casi terminás",
+  "🔧 Ajuste mínimo y listo",
+  "🔥 Hirviendo "
+];
+
+const frasesGanador = [
+  "🎉 ¡Le pegaste! Ese era el número. Honestamente, se sintió épico 😎",
+  "💥 BOOM, acertaste. No sé si fue suerte o talento, pero cuenta igual 😏",
+  "🎯 ¡Exacto! Encontraste el número secreto, misión cumplida",
+  "🥳 ¡Bien ahí! Lo encontraste, ahora podés reiniciar y volver a intentarlo",
+  "🔥 ¡Perfecto! Ese era el número. Se viene la revancha?",
+  "🎉 ¡Listo! Lo resolviste. Ahora no te agrandes tanto 😏",
+  "😌 Bien jugado, lo encontraste. Se nota que hubo pensamiento ahí",
+  "🏆 Nivel completado. El número secreto fue descubierto con éxito",
+  "🎮 Misión cumplida: encontraste el número oculto",
+  "🚀 Victoria total. El objetivo fue alcanzado",
+  "🎯 Target eliminado. Excelente precisión",
+  "🏁 Final perfecto. Listo para la siguiente ronda",
+  "✅ Test aprobado. Resultado correcto obtenido",
+  "🐞 Bug resuelto: encontraste el valor exacto",
+  "⚙️ Deploy completado. Todo funcionando como debería",
+  "🧪 Experimento exitoso. Resultado validado",
+  "🎉 ¡Le pegaste! El número estaba ahí esperándote 😄",
+  "🎈 ¡Ganaste! Ese numerito ya no se esconde más"
+
+
+];
+
+function randomFrase(lista) {
+  return lista[Math.floor(Math.random() * lista.length)];
+}
+
 boton.addEventListener("click", () => {
 
     const valor = Number(input.value);
@@ -32,7 +107,7 @@ boton.addEventListener("click", () => {
 
     //Mensaje ganador
     if (valor === numeroSecreto) {
-        mensaje.textContent = "¡Ganaste! Reiniciá para jugar de nuevo";
+        mensaje.textContent = randomFrase(frasesGanador);
 
         boton.disabled = true;
         input.disabled = true;
@@ -41,19 +116,19 @@ boton.addEventListener("click", () => {
     } else {
     // Sistema mayor o menor
     if (valor < numeroSecreto){
-        mensaje.textContent = "El número es mayor";
+        mensaje.textContent = randomFrase(frasesMayor);
     } else {
-         mensaje.textContent = "El número es menor";
+         mensaje.textContent = randomFrase(frasesMenor);
     }
 
     //Sistema calor/frío
 
     if (diferencia > 30){
-        mensaje.textContent += "❄️ Muy lejos";
+        mensaje.textContent += randomFrase(frasesLejos);
     } else if (diferencia > 10) {
-        mensaje.textContent += " 🟡 Cerca";
+        mensaje.textContent += randomFrase(frasesMedio);
     } else {
-        mensaje.textContent += "🔥 Muy cerca";
+        mensaje.textContent += randomFrase(frasesCerca);
     }
 
     }
