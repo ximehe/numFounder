@@ -38,7 +38,7 @@ Además de las pistas de texto, el juego incorpora indicadores visuales para hac
 
 ## 🖥️ Capturas
 
-*Agregar imágenes del juego acá*
+<img src="./Animación.gif" width="600">
 
 ## 🛠️ Tecnologías utilizadas
 
